@@ -59,6 +59,7 @@ const WeatherApp = () => {
     Haze: cloudy,
     Mist: cloudy,
     Drizzle: rainy,
+    Fog: cloudy,
   };
 
   const weatherImage = data.weather
@@ -73,6 +74,7 @@ const WeatherApp = () => {
     Haze: "linear-gradient(to right, #57d6d4, #71eeec)",
     Mist: "linear-gradient(to right, #57d6d4, #71eeec)",
     Drizzle: "linear-gradient(to right, #5bc8fb, #80eaff)",
+    Fog: "linear-gradient(to right, #57d6d4, #71eeec)",
   };
 
   const backgroundImage = data.weather
@@ -137,7 +139,8 @@ const WeatherApp = () => {
         ) : (
           <>
             <div className="weather">
-              <img src={weatherImage} alt="sunny" className="weather-icon" />
+                <div className="image-div"><img src={weatherImage} alt="sunny" className="weather-icon" /></div>
+              
               <div className="weather-type">
                 {data.weather ? data.weather[0].main : null}
               </div>
